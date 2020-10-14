@@ -2,47 +2,61 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="style.css">
 	<title>Test</title>
 </head>
 <body>
-    <div class="container">
-        <h1 class="header">todos</h1>
-        <div class="new_todo">
-            <button type="button"></button>
-            <input class="new_todo" type="text" value="What needs to be done">
-        </div>
-        
-        <ul class="todos_list">
-            <li>
-                <input type="checkbox">
-                <span>HTML</span>
-            </li>
-            <li>
-                <input type="checkbox">
-                <span>CSS</span>
-            </li>
-            <li>
-                <input type="checkbox">
-                <span>JS</span>
-            </li>
-            <li>
-               <input type="checkbox">
-               <span>JS tools</span>
-            </li>
-        </ul>
-        <div class="footer">
+    <main class="container">
+        <header>
+            <h1>todos</h1>
+        </header>
+
+        <section class="new_todo">
+            <button type="button" aria-label="Check or uncheck all"></button>
+            <input type="text" placeholder="What needs to be done" aria-label="Add new task">
+        </section>
+
+        <section class="todos_list"></section>
+            <ul>
+               <li>
+                    <input type="checkbox" aria-label="Completed task: HTML">
+                    <span>HTML</span>
+                    <button type="button" aria-label="Remove task: HTML"></button>
+                </li>
+
+                <li>
+                    <input type="checkbox" aria-label="Completed task: CSS">
+                    <span>CSS</span>
+                    <button type="button" aria-label="Remove task: CSS"></button>
+                </li>
+
+                <li>
+                    <input type="checkbox" aria-label="Completed task: JS">
+                    <span>JS</span>
+                    <button type="button" aria-label="Remove task: JS"></button>
+                </li>
+
+                <li>
+                    <input type="checkbox" aria-label="Completed task: JS tools">
+                    <span>JS tools</span>
+                    <button type="button" aria-label="Remove task: Js tools"></button>
+                </li>
+            </ul>
+        </section>
+
+        <footer>
             <span>3 items left</span>
+
             <div class="switchs">
-                <input type="radio" name="s" value="All">
-                <span>All</span>
-                <input type="radio" name="s" value="Active">
-                <span>Active</span>
-                <input type="radio" name="s" value="Completed">
-                <span>Completed</span>
+                <input id="radioAll" type="radio" name="filter" checked="checked" aria-label="Filter: show all">
+                <label for="radioAll">All</label>
+                <input id="radioAct" type="radio" name="filter" aria-label="Filter: show only active">
+                <label for="radioAct">Active</label>
+                <input id="radioCom" type="radio" name="filter" aria-label="Filter: show only completed">
+                <label for="radioCom">Completed</label>
             </div>
-            <button>Clear completed</button>
-        </div>
-    </div>
+
+            <button aria-label="Clear completed">Clear completed</button>
+        </footer>
+    </main>
 </body>
 </html>
