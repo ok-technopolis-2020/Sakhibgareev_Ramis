@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>todos</h1>
+        </header>
+
+        <section class="new_todo">
+            <button type="button" aria-label="Check or uncheck all"></button>
+            <input type="text" placeholder="What needs to be done" aria-label="Add new task">
+        </section>
+
+        <section class="todos_list"></section>
+            <ul>
+               <li>
+                    <input type="checkbox" aria-label="Completed task: HTML">
+                    <span>HTML</span>
+                    <button type="button" aria-label="Remove task: HTML"></button>
+                </li>
+
+                <li>
+                    <input type="checkbox" aria-label="Completed task: CSS">
+                    <span>CSS</span>
+                    <button type="button" aria-label="Remove task: CSS"></button>
+                </li>
+
+                <li>
+                    <input type="checkbox" aria-label="Completed task: JS">
+                    <span>JS</span>
+                    <button type="button" aria-label="Remove task: JS"></button>
+                </li>
+
+                <li>
+                    <input type="checkbox" aria-label="Completed task: JS tools">
+                    <span>JS tools</span>
+                    <button type="button" aria-label="Remove task: Js tools"></button>
+                </li>
+            </ul>
+        </section>
+
+        <footer>
+            <span>3 items left</span>
+
+            <div class="switchs">
+                <input id="radioAll" type="radio" name="filter" checked="checked" aria-label="Filter: show all">
+                <label for="radioAll">All</label>
+                <input id="radioAct" type="radio" name="filter" aria-label="Filter: show only active">
+                <label for="radioAct">Active</label>
+                <input id="radioCom" type="radio" name="filter" aria-label="Filter: show only completed">
+                <label for="radioCom">Completed</label>
+            </div>
+
+            <button aria-label="Clear completed">Clear completed</button>
+        </footer>
+    </main>
+</body>
+</html>
