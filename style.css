@@ -1,0 +1,187 @@
+body {
+    background-color: rgb(245, 245, 245);
+}
+
+.container {
+    width: 480px;
+    margin: auto;
+    margin-top: 15%;
+}
+
+/* Header */
+header {
+    width: fit-content;
+    margin: auto;
+    font-size: 64px;
+    color: rgb(180, 180, 180);
+    letter-spacing: -6px;
+}
+
+header h1 {
+    font-weight: 100;
+    font-family: Montserrat;
+    margin: 0;
+}
+
+/* Body of rest widnows */
+.white_body {
+    box-shadow: 0px 2px 5px lightgray;
+    background-color: white;
+}
+
+/* Section with text field and check all button */
+.new_todo {
+    height: 44px;
+    display: flex;
+    color:rgb(180, 180, 180);
+    font-style: italic;
+    font-size: 18px;
+    border: none;
+    width: 100%;
+    text-align: center;
+    border-bottom: solid lightgray 1px;
+}
+
+.new_todo button {
+    width: 44px;
+    background-color: white;
+    border: none;
+}
+
+
+.new_todo button::after {
+    content: "V";
+    color: lightgray;
+}
+
+.new_todo input {
+    font-family: Montserrat;
+    border: none;
+    font-size: 24px;
+}
+
+.new_todo input::placeholder {
+    font-style: italic;
+    color: rgb(182, 182, 182);
+}
+.new_todo input {
+    width: 100%;
+    font-style: normal;
+    color: rgb(97, 97, 97);
+}
+
+/* List of todos */
+
+.todos_list span {
+    font-family: Montserrat;
+    font-size: 24px;
+    letter-spacing: -1px;
+    font-weight: 100;
+    color: rgb(143, 143, 143);
+}
+
+.todos_list ul {
+    list-style-type: none;
+    padding-left: 0%;
+    margin: 0%;
+}
+
+.todos_list li button {
+    float: right;
+    background-color: white;
+    border: none;
+    margin-top: 5px;
+    margin-right: 5px;
+    opacity: 0;
+}
+
+.todos_list li:hover button {
+    opacity: 0.5;
+}
+
+.todos_list li {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: lightgray solid 1px;
+}
+
+.todos_list input {
+    -ms-transform: scale(1.5); /* IE */
+    -moz-transform: scale(1.5); /* FF */
+    -webkit-transform: scale(1.5); /* Safari and Chrome */
+    -o-transform: scale(1.5); /* Opera */
+    transform: scale(1.5);
+    padding: 10px;
+}
+
+.todos_list input {
+    height: 0px;
+    margin-right: 28px;
+    opacity: 1;
+}
+
+.todos_list input::after {
+    content: '';
+    text-align: center;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-top: -28px;
+    margin-left: 5px;
+    border-radius: 50%;
+    border: 1px solid #E6E6E6;
+    background-color: #FFF;
+    vertical-align: middle;
+}
+
+.todos_list input:checked::after {
+    content: 'V';
+    background-color: lightgreen;
+}
+
+.todos_list input:checked + span {
+    text-decoration: line-through;
+}
+
+/* Footer */
+footer {
+    margin-top: 10px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer span {
+    margin-left: 5px;
+}
+
+.switchs {
+    display: flex;
+}
+
+.switchs .buttons {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.switchs .labels label {
+    padding: 3px;
+    background-color: white;
+    border: lightgray solid 1px;
+}
+footer button {
+    border: none;
+    margin-bottom: 12px;
+    margin-right: 3px;
+    background-color: white;
+}
+
+footer button, 
+footer label,
+footer span {
+    font-family: Montserrat;
+    font-size: 20px;
+    letter-spacing: -1px;
+    color: rgb(143, 143, 143)
+}
