@@ -105,6 +105,7 @@ header h1 {
     font-size: 24px;
     font-weight: 300;
     color: var(--todo-text-color);
+    word-break: break-all;
 }
 
 /* Make default list style invisible */
