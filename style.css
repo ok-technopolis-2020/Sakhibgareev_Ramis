@@ -36,21 +36,24 @@ body {
     background-color: var(--background-color);
 }
 
-.container {
+.todo-app__container {
     width: var(--main-width);
-    margin: auto;
-    margin-top: 150px;
+    /* Fixed to body */
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 /* Header */
-header {
+.todo-app__header {
     width: fit-content;
     align-items: center;
     margin: auto;
     font-size: 58px;
 }
 
-header h1 {
+.todo-app__header h1 {
     font-weight: 100;
     color: var(--header-color);
     font-family: var(--main-font);
@@ -58,14 +61,14 @@ header h1 {
 }
 
 /* Body of rest widnows */
-.white_body {
-    box-shadow: 0px 2px 5px rgb(185, 185, 185);
+.todo-app__white-body {
+    box-shadow: 0 2px 5px rgb(185, 185, 185);
     background-color: white;
 }
 
 /* Section with text field and check all button */
 /* General style */
-.new_todo {
+.todo-app__new-todo {
     height: var(--input-textfield-height);
     display: flex;
     border: none;
@@ -73,16 +76,14 @@ header h1 {
     border-bottom: solid var(--todo-border-color) 1px;
 }
 
-.new_todo button {
+.todo-app__select-all-button {
     cursor: pointer;
     width: var(--input-textfield-height);
-    background: url(images/select_all.svg) no-repeat;
-    background-position: center;
-    background-color: var(--input-background-color);
+    background: var(--input-background-color) url(images/select_all.svg) no-repeat center;
     border: none;
 }
 
-.new_todo input {
+.todo-app__textfield {
     width: 100%;
     font-style: normal;
     font-weight: 100;
@@ -92,7 +93,7 @@ header h1 {
     font-size: 24px;
 }
 
-.new_todo input::placeholder {
+.todo-app__textfield::placeholder {
     font-style: italic;
     font-weight: 100;
     color: var(--input-textfiild-color);
@@ -100,7 +101,7 @@ header h1 {
 
 /* List of todos */
 /* Font */
-.todos_list span {
+.todo-app__todo-text-span {
     font-family: var(--main-font);
     font-size: 24px;
     font-weight: 300;
@@ -109,67 +110,66 @@ header h1 {
 }
 
 /* Make default list style invisible */
-.todos_list ul {
+.todo-app__todos-list {
     list-style-type: none;
-    padding-left: 0%;
-    margin: 0%;
+    padding-left: 0;
+    margin: 0;
 }
 
 /* Border and size of each todo element*/
-.todos_list li {
+.todo-app__todo-element, .todo-app__empty-element {
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding-top: 15px;
     padding-bottom: 15px;
+    min-height: 30px;
     border-bottom: solid var(--todo-border-color) 1px; 
 }
 
-.todos_list .wrapper {
+.todo-app__todo-element-wrapper {
     display: inline-flex;
 }
 
-.todos_list .text {
+.todo-app__todo-text {
     width: 480px;
     height: 100%;
     vertical-align: middle;
 }
 
 /* Element remove buttons */
-.todos_list button {
+.todo-app__remove-element {
     float: right;
     width: 30px;
     height: 30px;
-    background: url(images/remove.svg) no-repeat;
-    background-position: center;
-    background-color: var(--todo-backgound-color);
+    background: var(--todo-backgound-color) url(images/remove.svg) no-repeat center;
     border: none;
     margin-right: 5px;
     opacity: 0;
 }
 
-.todos_list li:hover {
+.todo-app__todo-element:hover {
     background-color: var(--todo-background-color-hover);
 }
 
-.todos_list li:hover button {
+.todo-app__todo-element:hover .todo-app__remove-element {
     background-color: var(--todo-background-color-hover);
     opacity: 1;
 }
 
-.todos_list li button:focus {
+.todo-app__remove-element:focus {
     opacity: 1;
 }
 
 /* Check button */
-.todos_list input {
+.todo-app__element-checkbox {
     width: 50px;
-    height: 0px;
+    height: 0;
     opacity: 1;
 }
 
 /* Face circle */
-.todos_list input::after {
+.todo-app__element-checkbox::after {
     cursor: pointer;
     content: '';
     text-align: center;
@@ -184,80 +184,73 @@ header h1 {
     vertical-align: middle;
 }
 
-.todos_list li:hover input::after {
+.todo-app__todo-element:hover .todo-app__element-checkbox::after {
     border: solid var(--todo-checkbox-color-hover) 1px;
 }
 
-.todos_list .todo input:checked::after {
+.todo-app__element-checkbox:checked::after {
     border: solid var(--todo-checkbox-color-checked) 1px;
-    background: url(images/checked.svg) no-repeat;
-    background-position: center;
+    background: url(images/checked.svg) no-repeat center;
 }
 
-.todos_list .todo input:checked + div span {
+.todo-app__element-checkbox:checked + .todo-app__todo-text-span {
     text-decoration: line-through;
     color: var(--todo-text-color-checked)
 }
 
 /* Footer */
 /* Footer location and element positioning */
-footer {
+.todo-app__footer {
     height: var(--footer-height);
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-footer .footer_wrapper {
+.todo-app__footer-wrapper {
     display: flex;
     justify-content: space-between;
 }
 
 /* Elements left text */ 
-footer span {
+.todo-app__footer-itemsleft {
     margin-left: 5px;
 }
 
 /* Radiobuttons style */
 /* Make actual radiobuttons invisible*/
-.switchs .radio {
+.todo-app__footer-radio {
     width: 0;
     height: 0;
     opacity: 0;
 }
 
-.switchs .buttons {
+.todo-app__footer-buttons {
     display: flex;
 }
 
-.switchs .radio:checked + label {
+.todo-app__footer-radio:checked + .todo-app__footer_label {
     background-color: white;
-    padding-right: 5px;
-    padding-left: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding: 2px 5px;
     border: lightgray solid 1px;
 }
 
-.switchs label {
-    padding-right: 6px;
-    padding-left: 6px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+.todo-app__footer_label {
+    padding: 3px 6px;
     cursor: pointer;
 }
 
 /* Clear all button */
-footer button {
+.todo-app__footer-clearbtn {
     border: none;
     margin-right: 3px;
     background-color: white;
     cursor: pointer;
 }
 
-footer button, 
-footer label,
-footer span {
+.todo-app__footer-clearbtn,
+.todo-app__footer_label,
+.todo-app__footer-wrapper {
     font-family: var(--main-font);
     font-size: 14px;
     color: var(--footer-text-color)
