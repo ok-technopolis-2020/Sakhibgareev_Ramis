@@ -1,62 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
 	<title>Test</title>
 </head>
 <body>
-    <main class="container">
-        <header>
+    <main class="todo-app__container">
+        <header class="todo-app__header">
             <h1>todos</h1>
         </header>
 
-        <section class="new_todo">
-            <button type="button" aria-label="Check or uncheck all"></button>
-            <input type="text" placeholder="What needs to be done" aria-label="Add new task">
+        <section class="todo-app__white-body">
+        <section class="todo-app__new-todo">
+            <button class="todo-app__select-all-button" type="button" aria-label="Check or uncheck all"></button>
+            <input class="todo-app__textfield" type="text" placeholder="What needs to be done?" aria-label="Add new task">
         </section>
 
-        <section class="todos_list"></section>
-            <ul>
-               <li>
-                    <input type="checkbox" aria-label="Completed task: HTML">
-                    <span>HTML</span>
-                    <button type="button" aria-label="Remove task: HTML"></button>
+        <section class="todo-app__todos-container">
+            <ul class="todo-app__todos-list">
+                <li class="todo-app__todo-element">
+                   <div class="todo-app__todo-element-wrapper">
+                        <input class="todo-app__element-checkbox" type="checkbox" aria-label="Completed task: HTML">
+                        <div class="todo-app__todo-text">
+                            <span class="todo-app__todo-text-span">HTML</span>
+                        </div>
+                        <button class="todo-app__remove-element" type="button" aria-label="Remove task: HTML"></button>
+                    </div>
                 </li>
-
-                <li>
-                    <input type="checkbox" aria-label="Completed task: CSS">
-                    <span>CSS</span>
-                    <button type="button" aria-label="Remove task: CSS"></button>
+                <li class="todo-app__todo-element">
+                    <div class="todo-app__todo-element-wrapper">
+                        <input class="todo-app__element-checkbox" type="checkbox" aria-label="Completed task: CSS">
+                        <div class="todo-app__todo-text">
+                            <span class="todo-app__todo-text-span">CSS</span>
+                        </div>
+                        <button class="todo-app__remove-element" type="button" aria-label="Remove task: CSS"></button>
+                    </div>
                 </li>
-
-                <li>
-                    <input type="checkbox" aria-label="Completed task: JS">
-                    <span>JS</span>
-                    <button type="button" aria-label="Remove task: JS"></button>
+                <li class="todo-app__todo-element">
+                    <div class="todo-app__todo-element-wrapper">
+                        <input class="todo-app__element-checkbox" type="checkbox" aria-label="Completed task: JS">
+                        <div class="todo-app__todo-text">
+                            <span class="todo-app__todo-text-span">JS</span>
+                        </div>
+                        <button class="todo-app__remove-element" type="button" aria-label="Remove task: JS"></button>
+                    </div>
                 </li>
-
-                <li>
-                    <input type="checkbox" aria-label="Completed task: JS tools">
-                    <span>JS tools</span>
-                    <button type="button" aria-label="Remove task: Js tools"></button>
+                <li class="todo-app__todo-element">
+                    <div class="todo-app__todo-element-wrapper">
+                        <input class="todo-app__element-checkbox" type="checkbox" aria-label="Completed task: JS tools">
+                        <div class="todo-app__todo-text">
+                            <span class="todo-app__todo-text-span">JS tools</span>
+                        </div>
+                        <button class="todo-app__remove-element" type="button" aria-label="Remove task: JS tools"></button>
+                    </div>
+                </li>
+                <li class="todo-app__empty-element">
                 </li>
             </ul>
         </section>
 
-        <footer>
-            <span>3 items left</span>
+        <footer class="todo-app__footer">
+            <div class="todo-app__footer-wrapper">
+            <span class="todo-app__footer-itemsleft">3 items left</span>
 
-            <div class="switchs">
-                <input id="radioAll" type="radio" name="filter" checked="checked" aria-label="Filter: show all">
-                <label for="radioAll">All</label>
-                <input id="radioAct" type="radio" name="filter" aria-label="Filter: show only active">
-                <label for="radioAct">Active</label>
-                <input id="radioCom" type="radio" name="filter" aria-label="Filter: show only completed">
-                <label for="radioCom">Completed</label>
+            <div class="todo-app__footer-switchs">
+                <div class="todo-app__footer-buttons">
+                    <div>
+                        <input class="todo-app__footer-radio" id="radioAll" type="radio" name="filter" checked="checked" aria-label="Filter: show all">
+                        <label class="todo-app__footer_label" for="radioAll">All</label>
+                    </div>
+                    <div>
+                        <input class="todo-app__footer-radio" id="radioAct" type="radio" name="filter" aria-label="Filter: show only active">
+                        <label class="todo-app__footer_label" for="radioAct">Active</label>
+                    </div>
+                    <div>
+                        <input class="todo-app__footer-radio" id="radioCom" type="radio" name="filter" aria-label="Filter: show only completed">
+                        <label class="todo-app__footer_label" for="radioCom">Completed</label>
+                    </div>
+                </div>
             </div>
 
-            <button aria-label="Clear completed">Clear completed</button>
+            <button class="todo-app__footer-clearbtn" aria-label="Clear completed">Clear completed</button>
+        </div>
         </footer>
+        </section>
     </main>
 </body>
 </html>

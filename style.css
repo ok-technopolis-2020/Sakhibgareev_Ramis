@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+
+:root {
+    --background-color: #f5f5f5;
+    --header-color: #cccccc;
+    
+    --input-textfiild-color: #cccccc;
+    --input-textfiild-color-focus: #666666;
+    --check-all-button-color: #e6e6e6;
+    --input-background-color: #ffffff;
+
+    --todo-text-color: #666666;
+    --todo-text-color-checked: #cccccc;
+    --todo-backgound-color: #ffffff;
+    --todo-background-color-hover: #fafafa;
+    --todo-checkbox-color: #e6e6e6;
+    --todo-checkbox-color-hover: #d7d7d7;
+    --todo-checkbox-color-checked: #00cab3;
+    --todo-delete-button-color: #f1dede;
+    --todo-border-color: #ececec;
+
+    --active-radiobutton-color: #f1dede;
+    --footer-text-color: #9d9d9d;
+
+    --main-width: 560px;
+    --input-textfield-height: 62px;
+    --todo-height: 60px;
+    --todo-text-width: 460px;
+    --footer-height: 40px;
+
+
+    --main-font: "Roboto", sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.todo-app__container {
+    width: var(--main-width);
+    /* Fixed to body */
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+/* Header */
+.todo-app__header {
+    width: fit-content;
+    align-items: center;
+    margin: auto;
+    font-size: 58px;
+}
+
+.todo-app__header h1 {
+    font-weight: 100;
+    color: var(--header-color);
+    font-family: var(--main-font);
+    margin: 0;
+}
+
+/* Body of rest widnows */
+.todo-app__white-body {
+    box-shadow: 0 2px 5px rgb(185, 185, 185);
+    background-color: white;
+}
+
+/* Section with text field and check all button */
+/* General style */
+.todo-app__new-todo {
+    height: var(--input-textfield-height);
+    display: flex;
+    border: none;
+    width: 100%;
+    border-bottom: solid var(--todo-border-color) 1px;
+}
+
+.todo-app__select-all-button {
+    cursor: pointer;
+    width: var(--input-textfield-height);
+    background: var(--input-background-color) url(images/select_all.svg) no-repeat center;
+    border: none;
+}
+
+.todo-app__textfield {
+    width: 100%;
+    font-style: normal;
+    font-weight: 100;
+    color: var(--input-textfiild-color-focus);
+    font-family: var(--main-font);
+    border: none;
+    font-size: 24px;
+}
+
+.todo-app__textfield::placeholder {
+    font-style: italic;
+    font-weight: 100;
+    color: var(--input-textfiild-color);
+}
+
+/* List of todos */
+/* Font */
+.todo-app__todo-text-span {
+    font-family: var(--main-font);
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--todo-text-color);
+    word-break: break-all;
+}
+
+/* Make default list style invisible */
+.todo-app__todos-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* Border and size of each todo element*/
+.todo-app__todo-element, .todo-app__empty-element {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    min-height: 30px;
+    border-bottom: solid var(--todo-border-color) 1px; 
+}
+
+.todo-app__todo-element-wrapper {
+    display: inline-flex;
+}
+
+.todo-app__todo-text {
+    width: 480px;
+    height: 100%;
+    vertical-align: middle;
+}
+
+/* Element remove buttons */
+.todo-app__remove-element {
+    float: right;
+    width: 30px;
+    height: 30px;
+    background: var(--todo-backgound-color) url(images/remove.svg) no-repeat center;
+    border: none;
+    margin-right: 5px;
+    opacity: 0;
+}
+
+.todo-app__todo-element:hover {
+    background-color: var(--todo-background-color-hover);
+}
+
+.todo-app__todo-element:hover .todo-app__remove-element {
+    background-color: var(--todo-background-color-hover);
+    opacity: 1;
+}
+
+.todo-app__remove-element:focus {
+    opacity: 1;
+}
+
+/* Check button */
+.todo-app__element-checkbox {
+    width: 50px;
+    height: 0;
+    opacity: 1;
+}
+
+/* Face circle */
+.todo-app__element-checkbox::after {
+    cursor: pointer;
+    content: '';
+    text-align: center;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin-top: -8px;
+    margin-left: 5px;
+    border-radius: 50%;
+    border: solid var(--todo-checkbox-color) 1px;
+    background-color: #FFF;
+    vertical-align: middle;
+}
+
+.todo-app__todo-element:hover .todo-app__element-checkbox::after {
+    border: solid var(--todo-checkbox-color-hover) 1px;
+}
+
+/* I cannot find any way to make this style more important that previous one */
+/*   but this one */
+.todo-app__todos-list .todo-app__todo-element .todo-app__element-checkbox:checked::after {
+    border: solid var(--todo-checkbox-color-checked) 1px;
+    background: url(images/checked.svg) no-repeat center;
+}
+
+.todo-app__element-checkbox:checked + .todo-app__todo-text-span {
+    text-decoration: line-through;
+    color: var(--todo-text-color-checked)
+}
+
+/* Footer */
+/* Footer location and element positioning */
+.todo-app__footer {
+    height: var(--footer-height);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.todo-app__footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Elements left text */ 
+.todo-app__footer-itemsleft {
+    margin-left: 5px;
+}
+
+/* Radiobuttons style */
+/* Make actual radiobuttons invisible*/
+.todo-app__footer-radio {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.todo-app__footer-buttons {
+    display: flex;
+}
+
+.todo-app__footer-radio:checked + .todo-app__footer_label {
+    background-color: white;
+    padding: 2px 5px;
+    border: lightgray solid 1px;
+}
+
+.todo-app__footer_label {
+    padding: 3px 6px;
+    cursor: pointer;
+}
+
+/* Clear all button */
+.todo-app__footer-clearbtn {
+    border: none;
+    margin-right: 3px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.todo-app__footer-clearbtn,
+.todo-app__footer_label,
+.todo-app__footer-wrapper {
+    font-family: var(--main-font);
+    font-size: 14px;
+    color: var(--footer-text-color)
+}
