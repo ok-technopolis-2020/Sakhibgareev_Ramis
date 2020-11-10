@@ -188,7 +188,9 @@ body {
     border: solid var(--todo-checkbox-color-hover) 1px;
 }
 
-.todo-app__element-checkbox:checked::after {
+/* I cannot find any way to make this style more important that previous one */
+/*   but this one */
+.todo-app__todos-list .todo-app__todo-element .todo-app__element-checkbox:checked::after {
     border: solid var(--todo-checkbox-color-checked) 1px;
     background: url(images/checked.svg) no-repeat center;
 }
